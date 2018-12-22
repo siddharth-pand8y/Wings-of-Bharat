@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 92vh;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 0.96em;
+}
+
+header {
+  height: 8vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    to top,
+    #1e3c72 0%,
+    #1e3c72 1%,
+    #2a5298 100%
+  );
+  display: grid;
+  grid-template-columns: 6vw 16vw 68vw 10vw;
+  align-items: center;
+  color: #7fe5f0;
+  z-index: 2;
+}
+header img {
+  height: 6vh;
+  grid-column: 1/2;
+}
+
+header h1 {
+  letter-spacing: 0.21vw;
+  line-height: 2vmin;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  grid-column: 2/3;
+  font-size: 1.8vmin;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+header p {
+  text-align: left;
+  font-size: 1.7vmin;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.31vw;
+  grid-column: 3/5;
+  border-left: 1px solid white;
+  padding-left: 1vw;
+}
+
+.app {
+  height: 92vh;
+  display: grid;
+  grid-template-columns: 20vw 60vw 20vw;
+}
+
+#map {
+  grid-column: 1/4;
+  height: 92vh;
+  width: 100%;
+  z-index: 0;
+}
+
+.list-btn,
+.list-input,
+.info-window-box {
+  box-shadow: 0 0 3px rgba(170, 170, 170, 0.75);
+}
+
+/* filter locations */
+
+.list-box {
+  box-sizing: border-box;
+  position: fixed;
+  top: 8vh;
+  background-color: #1e3c72;
+  width: 22vw;
+  left: 0;
+  z-index: 1;
+  padding: 0;
+}
+
+.list-form {
+  background: #1e3c72;
+  margin: auto;
+  width: 22vw;
+  height: 10vh;
+  display: grid;
+  grid-template-rows: 5vh 5vh;
+}
+
+.list-btn {
+  background: #7fe5f0;
+  grid-row: 1/2;
+  border: none;
+  font-weight: 600;
+  width: 21vw;
+  height:4vh;
+  color: #1e3c72;
+  margin:auto;
+  border-radius: 0.4vh;
+}
+
+.list-btn:hover {
+  color: navyblue;
+}
+
+.list-input {
+  grid-row: 2/3;
+  border: none;
+  margin: auto;
+  border: 1px solid #7fe5f0;
+  padding: 5px 8px;
+  border-radius: 0.5vh;
+  width: 90%;
+  background-color: #1e3c72;
+  color: #7fe5f0;
+}
+
+.locations-list {
+  list-style: none;
+  background-color: #1e3c72;
+  color: #7fe5f0;
+  width: 22vw;
+  height:92vh;
+
+  border-bottom: 1px solid #ccc;
+  padding: 1.5vh;
+}
+
+.location-item {
+  padding: 10px 0;
+}
+
+.location-item:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+/* info window */
+.info-window-box {
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  z-index: 1;
+  width: 22vw;
+  height: 92vh;
+  overflow: auto;
+  background: #fff;
+  padding: 0 10px 10px 10px;
+  border-radius: 2px 2px 0 0;
+  text-align: justify;
+}
+
+.info-window-box h2 {
+  border-bottom: 1px solid #9fa0a0;
+  padding: 0 0 5px 0;
+  margin: 0 0 10px 0;
+  text-align: left;
+  font-family: "Poppins";
+  font-weight: 500;
+}
+.info-window-box {
+  font-family: "Vidaloka";
+  text-justify: none;
+}
+.info-window-box p {
+  text-decoration: none;
+  color: #9fa0a0;
+  font-family: "Alfa Slab One";
+}
+
+.info-window-box svg {
+  width: 2vh;
+  height: 2vh;
+}
+
+/* attribution */
+.attribution {
+  color: #aaa;
+  font-style: italic;
+  font-size: 0.8em;
+  margin: 5px 0;
+}
+.close {
+  font-family: 'Poppins';
+  font-size: 3vh;
+  text-align: right;
+  text-decoration: none;
+  color: black;
+}
+
+@media (orientation: portrait) {
+  header {
+    display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+  }
+  header p {
+    display: none;
+  }
+  header h1 {
+    font-size: 3.5vw;
+    letter-spacing: 0.5vw;
+  }
+	.location-items{
+
+	}
+	.list-box
+	{
+		width:35vw;
+	}
+	.list-form{
+
+		width:35vw;
+	}
+	.list-btn{
+		width:35vw;
+	}
+	.app{
+		grid-template-columns: 35vw 65vw;
+		grid-template-rows: 50vh 50vh;
+	}
+	#map{
+
+		grid-template-rows:1/3;
+		grid-template-columns: 2/3;
+
+		width: 100vw;
+		height: 92vh;
+		position: fixed;
+		right:0;
+		top:0;
+	}
+
+	.info-window-box
+	{
+		position: fixed;
+		top:70vh;
+		right:0;
+		grid-column: 2/3;
+		grid-row: 2/3;
+
+		z-index: 1;
+	  width: 65vw;
+	  height: 30vh;
+	  background: #fff;
+	  padding: 0 10px 10px 10px;
+	  border-radius: 2px 2px 0 0;
+	  text-align: justify;
+	}
+
+}
